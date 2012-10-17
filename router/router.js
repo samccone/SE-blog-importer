@@ -1,4 +1,5 @@
 var request = require('request');
+var fs = require('fs');
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
@@ -7,6 +8,30 @@ module.exports = function(app) {
 
   app.get("/choose-import-type", function(req, res) {
     res.render("typeofimport", {email: req.session.email});
+  });
+
+  app.get("/wordpress_import", function(req, res) {
+    res.render("wordpress_import");
+  });
+
+  app.get("/wordpress_xml_uploaded", function(req, res) {
+    res.render("wordpress_xml_uploaded", {
+      filePath: req.session.xml
+    });
+  });
+
+  app.post('/upload_wordpress_xml', function(req, res) {
+    fs.readFile(req.files.xml.path, function(err, data) {
+      var filePath = __dirname + "/../uploads/"+req.files.xml.filename;
+      fs.writeFile(filePath, data, function(err) {
+        if (err) {
+          throw new Error("Error saving file " + err);
+        } else {
+          req.session.xml = filePath;
+          res.redirect('/wordpress_xml_uploaded');
+        }
+      });
+    });
   });
 
   app.post('/login', function(req, res) {
