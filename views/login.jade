@@ -1,11 +1,14 @@
-h2 Login With Your Samexhibit credentials
-form(action="login", method="post")
-  label(for="username") Username
-  br/
-  input#username(name="email")
-  br/
-  label(for="password") Password
-  br/
-  input#password(name="pass", type="password")
-  br/
-  input(type="submit")
+extends layout
+
+block content
+  h2 Login With Your Samexhibit credentials
+  form(action="login", method="post")
+    label(for="username") Username
+    br/
+    input#username(name="email")
+    br/
+    label(for="password") Password
+    br/
+    input#password(name="pass", type="password")
+    br/
+    input(type="submit")

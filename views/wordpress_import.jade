@@ -1,5 +1,8 @@
-h2 Import From Wordpress
+extends layout
 
-form(method="post", action="/upload_wordpress_xml", enctype="multipart/form-data")
-  input(type="file", name="xml")
-  input(type="submit")
+block content
+  h2 Import From Wordpress
+
+  form(method="post", action="/upload_wordpress_xml", enctype="multipart/form-data")
+    input(type="file", name="xml")
+    input(type="submit")

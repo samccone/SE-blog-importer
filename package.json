@@ -9,8 +9,11 @@
   "dependencies": {
     "express": "latest",
     "connect": "latest",
+    "connect-flash": "latest",
     "jade": "latest",
-    "request": "latest"
+    "xml2js": "latest",
+    "request": "latest",
+    "underscore": "latest"
   },
   "repository": "",
   "author": "sam saccone",
