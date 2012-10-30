@@ -5,7 +5,8 @@ block content
   button.btn.btn-primary#toggleAll.on Toggle All
   ul.post_selector
     - for (var i = 0; i < posts.length; ++i)
-      li
+      li(class=((i+1)%2 ? 'odd' : 'even'))
         label.checkbox
-          input(type="checkbox")
+          input(type="checkbox", value = "#{posts[i]['wp:post_id']}")
           span= posts[i].title
+  .cl
