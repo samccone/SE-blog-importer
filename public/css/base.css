@@ -6,5 +6,22 @@ body {
 }
 
 .post_selector {
-  margin-top: 20px;
+  list-style: none;
+  margin: 20px 0 0 0;
+}
+
+.post_selector li {
+  width: 50%;
+}
+
+.post_selector li.odd {
+  float: left;
+}
+
+.post_selector li.even {
+  float: left;
+}
+
+.cl {
+  clear: both;
 }
