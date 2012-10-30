@@ -1,14 +1,11 @@
 extends layout
 
 block content
-  h2 Login With Your Samexhibit credentials
+  h2 Login With Your SamExhibit credentials
   form(action="login", method="post")
     label(for="username") Username
-    br/
-    input#username(name="email")
-    br/
+    input#username(name="email", type="text")
     label(for="password") Password
-    br/
     input#password(name="pass", type="password")
     br/
-    input(type="submit")
+    input(type="submit", class="btn btn-primary")

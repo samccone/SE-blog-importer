@@ -1,4 +1,8 @@
-- if(typeof(errors) != "undefined" && errors.length)
-  #errors(style="background:red;padding: 10px;color:#FFF;")= errors
-
-block content
+!!!
+head
+  link(rel="stylesheet", href="/css/base.css")
+  link(rel="stylesheet", href="/css/bootstrap.min.css")
+body
+  - if(typeof(errors) != "undefined" && errors.length)
+    #errors(style="background:red;padding: 10px;color:#FFF;")= errors
+  block content
