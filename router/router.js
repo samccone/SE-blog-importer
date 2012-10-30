@@ -1,7 +1,9 @@
 var loginController = require('../controllers/login');
 var wordpressController = require('../controllers/wordpress');
 
-module.exports = function(app) {
+module.exports = function(app, db) {
+  wordpressController.setDatabase(db);
+
   app.get('/', function(req, res) {
     res.render("login", {errors: req.flash("error")});
   });
@@ -21,5 +23,5 @@ module.exports = function(app) {
   });
 
   app.post('/login', loginController.login);
-  app.post('/upload_wordpress_xml', wordpressController.parseXML);
+  app.post('/upload_wordpress_xml', wordpressController.processXML);
 }

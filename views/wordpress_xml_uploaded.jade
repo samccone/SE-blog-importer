@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h2 Wordpress XML uploaded
-  h4= filePath
+  h2 Choose Which Posts To Upload
+  button.btn.btn-primary#toggleAll.on Toggle All
+  ul.post_selector
+    - for (var i = 0; i < posts.length; ++i)
+      li
+        label.checkbox
+          input(type="checkbox")
+          span= posts[i].title
