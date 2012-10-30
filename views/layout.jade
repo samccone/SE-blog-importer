@@ -2,6 +2,8 @@
 head
   link(rel="stylesheet", href="/css/base.css")
   link(rel="stylesheet", href="/css/bootstrap.min.css")
+  script(type="text/javascript", src="js/jquery.1.8.2.js")
+  script(type="text/javascript", src="js/main.js")
 body
   - if(typeof(errors) != "undefined" && errors.length)
     #errors(style="background:red;padding: 10px;color:#FFF;")= errors
