@@ -3,10 +3,12 @@ extends layout
 block content
   h2 Choose Which Posts To Upload
   button.btn.btn-primary#toggleAll.on Toggle All
-  ul.post_selector
-    - for (var i = 0; i < posts.length; ++i)
-      li(class=((i+1)%2 ? 'odd' : 'even'))
-        label.checkbox
-          input(type="checkbox", value = "#{posts[i]['wp:post_id']}")
-          span= posts[i].title
-  .cl
+  form(method="POST", action="/select_post_imports")
+    ul.post_selector
+      - for (var i = 0; i < posts.length; ++i)
+        li(class=((i+1)%2 ? 'odd' : 'even'))
+          label.checkbox
+            input(type="checkbox", name="posts", value="#{posts[i]['wp:post_id']}")
+            span= posts[i].title
+    .cl
+    input(type="submit", class="btn btn-success")
