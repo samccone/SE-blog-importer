@@ -12,11 +12,11 @@ function hitSeSever(req, res) {
 }
 
 function onSeResponse(req, res, err, response, body) {
-  body = JSON.parse(body);
-  if (err != null || typeof(body.error) != "undefined") {
+  if (!body || (err != null || typeof(body.error) != "undefined")) {
     req.flash('error', err != null ? err : body.error);
     res.redirect('/');
   } else {
+    body = JSON.parse(body);
     req.session = {
       email: body.email,
       token: body.auth_token

@@ -6,5 +6,5 @@ head
   script(type="text/javascript", src="js/main.js")
 body
   - if(typeof(errors) != "undefined" && errors.length)
-    #errors(style="background:red;padding: 10px;color:#FFF;")= errors
+    #errors(style="background:red;padding: 10px;color:#FFF;")= JSON.stringify(errors)
   block content
