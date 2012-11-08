@@ -19,7 +19,8 @@ function get(key, cb) {
 
 function connect() {
   return {
-    'Post': Post
+    'Post': Post,
+    'get': get
   };
 }
 
@@ -27,5 +28,4 @@ function connect() {
 
 module.exports = {
   connect: connect,
-  get: get
 }

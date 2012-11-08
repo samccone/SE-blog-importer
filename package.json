@@ -13,7 +13,9 @@
     "jade": "latest",
     "xml2js": "latest",
     "request": "latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "cheerio": "latest",
+    "colors": "latest"
   },
   "repository": "",
   "author": "sam saccone",
