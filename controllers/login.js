@@ -1,7 +1,7 @@
 var request = require('request');
 
 function hitSeSever(req, res) {
-  request.post("http://lvh.me:3000/api/v1/login", {
+  request.post("http://samexhibit.com/api/v1/login", {
     form: {
       email: new Buffer(req.body.email).toString("base64"),
       password: new Buffer(req.body.pass).toString("base64")

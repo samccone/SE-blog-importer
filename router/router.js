@@ -24,4 +24,5 @@ module.exports = function(app, db) {
 
   app.post('/login', loginController.login);
   app.post('/upload_wordpress_xml', wordpressController.processXML);
+  app.post('/select_post_imports', wordpressController.importPosts);
 }

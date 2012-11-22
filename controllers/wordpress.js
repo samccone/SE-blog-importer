@@ -9,7 +9,7 @@ function setDatabase(db) {
 }
 
 // parses the XML and extracts posts
-function processXML(req, res, test) {
+function processXML(req, res, callbacks, test) {
   fs.readFile(req.files.xml.path, function(err, data) {
     xmlParser(data, function(err, data) {
       var dataValid = !(err || !Boolean(data));
@@ -17,13 +17,13 @@ function processXML(req, res, test) {
         req.flash("error", "Error Reading wordpress XML");
         res.redirect('/wordpress_import');
       } else {
-        parseUpload(data, req, res, test);
+        parseUpload(data, req, res, callbacks, test);
       }
     });
   });
 }
 
-function parseUpload(data, req, res, test) {
+function parseUpload(data, req, res, callbacks, test) {
   saveData(getPosts(data.rss.channel[0].item), function(err, data) {
     if (!test) {
       req.session.storeKey = data.key;
