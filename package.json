@@ -15,7 +15,8 @@
     "request": "latest",
     "underscore": "latest",
     "cheerio": "latest",
-    "colors": "latest"
+    "colors": "latest",
+    "knox": "0.4.2"
   },
   "repository": "",
   "author": "sam saccone",
